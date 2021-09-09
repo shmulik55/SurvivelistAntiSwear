@@ -21,7 +21,7 @@ public class AdminCommands implements CommandExecutor {
         List Swears = plugin.getConfig().getList("swearList");
         String reloadMsg = plugin.getConfig().getString("reloadMsg");
 
-        if (args.length > 0 || args.length > 1) {
+        if (args.length == 1) {
             if (args[0].toLowerCase().equals("reload")) {
                 if (player.hasPermission("sw.reload") || player.hasPermission("sw.admin")) {
 
@@ -30,6 +30,7 @@ public class AdminCommands implements CommandExecutor {
 
                 }
             }
+        }if(args.length >= 2){
             if(args[0].toLowerCase().equals("add")){
                 if(player.hasPermission("sw.add") || player.hasPermission("sw.admin")){
                     Swears.add(args[1]);
