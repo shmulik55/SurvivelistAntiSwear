@@ -22,7 +22,7 @@ public class AdminCommands implements CommandExecutor {
         String reloadMsg = plugin.getConfig().getString("reloadMsg");
 
         if (args.length > 0) {
-            if (args[0].equalsIgnoreCase("reload")) {
+            if (args[0].toLowerCase().equals("reload")) {
                 if (player.hasPermission("sw.reload") || player.hasPermission("sw.admin")) {
 
                     plugin.reloadConfig();
@@ -30,7 +30,7 @@ public class AdminCommands implements CommandExecutor {
 
                 }
             }
-            if(args[0].equalsIgnoreCase("add")){
+            if(args[0].toLowerCase().equals("add")){
                 if(player.hasPermission("sw.add") || player.hasPermission("sw.admin")){
                     Swears.add(args[1]);
                 }
