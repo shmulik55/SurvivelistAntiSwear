@@ -1,0 +1,9 @@
+name: SurvivelistAntiSwear
+version: ${project.version}
+main: itzshmulik.survivelist.survivelistantiswear.SurvivelistAntiSwear
+api-version: 1.17
+authors: [ ItzShmulik ]
+description: Survivelist's swear filter
+commands:
+  sw:
+    description: All of the anti swear admin commands.
