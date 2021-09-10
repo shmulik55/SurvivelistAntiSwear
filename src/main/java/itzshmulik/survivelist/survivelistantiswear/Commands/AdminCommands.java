@@ -18,7 +18,7 @@ public class AdminCommands implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
         Player player = (Player) sender;
-        List Swears = plugin.getConfig().getList("swearList");
+        List Swears = plugin.getConfig().getList("SwearList");
         String reloadMsg = plugin.getConfig().getString("reloadMsg");
         String NoPermMsg = plugin.getConfig().getString("NoPermMsg");
         String Prefix = plugin.getConfig().getString("Prefix");
