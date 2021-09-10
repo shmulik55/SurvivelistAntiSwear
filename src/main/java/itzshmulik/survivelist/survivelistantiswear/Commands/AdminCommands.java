@@ -18,7 +18,7 @@ public class AdminCommands implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
         Player player = (Player) sender;
-        List Swears = plugin.getConfig().getList("SwearList");
+        List SwearList = plugin.getConfig().getList("SwearList");
         String reloadMsg = plugin.getConfig().getString("reloadMsg");
         String NoPermMsg = plugin.getConfig().getString("NoPermMsg");
         String Prefix = plugin.getConfig().getString("Prefix");
@@ -43,7 +43,7 @@ public class AdminCommands implements CommandExecutor {
         }if(args.length > 1){
             if(args[0].toLowerCase().equals("add")){
                 if(player.hasPermission("sw.add") || player.hasPermission("sw.admin")){
-                    Swears.add(args[1]);
+                    SwearList.add(args[1]);
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', Prefix + "&6Added swear: " + args[1] + " to the list!"));
                 }else{
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', NoPermMsg));
