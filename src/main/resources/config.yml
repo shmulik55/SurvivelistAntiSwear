@@ -1,4 +1,5 @@
 reloadMsg: '&aReloading Config!'
+NoPermMsg: '&cYou have perm using that command!'
 SwearList:
   - 'Fuck'
   - 'Dick'
@@ -9,3 +10,8 @@ SwearList:
   - 'Mother fucker'
   - 'Vagina'
   - 'Sex'
+  - 'Cunt'
+  - 'Bastard'
+  - 'Slut'
+  - 'Whore'
+  - 'Idiot'
