@@ -1,5 +1,6 @@
 reloadMsg: '&aReloading Config!'
 NoPermMsg: '&cYou have perm using that command!'
+Prefix: '&6&l[AntiSwear] '
 SwearList:
   - 'Fuck'
   - 'Dick'
@@ -15,3 +16,4 @@ SwearList:
   - 'Slut'
   - 'Whore'
   - 'Idiot'
+  - 'Penis'

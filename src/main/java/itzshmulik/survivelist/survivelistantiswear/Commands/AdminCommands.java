@@ -20,8 +20,8 @@ public class AdminCommands implements CommandExecutor {
         Player player = (Player) sender;
         List Swears = plugin.getConfig().getList("swearList");
         String reloadMsg = plugin.getConfig().getString("reloadMsg");
-        String SwAdd = plugin.getConfig().getString("SwearAddMsg");
         String NoPermMsg = plugin.getConfig().getString("NoPermMsg");
+        String Prefix = plugin.getConfig().getString("Prefix");
 
         if (args.length >= 1) {
             if (args[0].toLowerCase().equals("reload")) {
@@ -34,8 +34,19 @@ public class AdminCommands implements CommandExecutor {
             }
         }if(args.length == 1){
             if(args[0].toLowerCase().equals("add")){
-                if(player.hasPermission("sw.admin") || player.hasPermission("sw.add")){
-                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', NoPermMsg));
+                if(player.hasPermission("sw.add") || player.hasPermission("sw.admin")){
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', Prefix + "&6Command usage: /sw add {swear}"));
+                }else{
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', NoPermMsg));
+                }
+            }
+        }if(args.length > 1){
+            if(args[0].toLowerCase().equals("add")){
+                if(player.hasPermission("sw.add") || player.hasPermission("sw.admin")){
+                    Swears.add(args[1]);
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', Prefix + "&6Added swear: " + args[1] + " to the list!"));
+                }else{
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', NoPermMsg));
                 }
             }
         }
