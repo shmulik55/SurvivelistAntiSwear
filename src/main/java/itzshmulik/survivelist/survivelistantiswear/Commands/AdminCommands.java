@@ -46,7 +46,7 @@ public class AdminCommands implements CommandExecutor {
                     SwearList.add(args[1]);
                     plugin.getConfig().set("SwearList", SwearList);
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', Prefix + "&6Added swear: " + args[1] + " to the list!"));
-                    plugin.saveDefaultConfig();
+                    plugin.saveConfig();
                 }else{
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', NoPermMsg));
                 }
