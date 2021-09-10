@@ -20,8 +20,9 @@ public class AdminCommands implements CommandExecutor {
         Player player = (Player) sender;
         List Swears = plugin.getConfig().getList("swearList");
         String reloadMsg = plugin.getConfig().getString("reloadMsg");
+        String SwAdd = plugin.getConfig().getString("SwearAddMsg");
 
-        if (args.length == 1) {
+        if (args.length >= 1) {
             if (args[0].toLowerCase().equals("reload")) {
                 if (player.hasPermission("sw.reload") || player.hasPermission("sw.admin")) {
 
@@ -34,6 +35,7 @@ public class AdminCommands implements CommandExecutor {
             if(args[0].toLowerCase().equals("add")){
                 if(player.hasPermission("sw.add") || player.hasPermission("sw.admin")){
                     Swears.add(args[1]);
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&', SwAdd + args[1]));
                 }
             }
         }
